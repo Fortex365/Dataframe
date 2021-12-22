@@ -16,5 +16,21 @@ public class Main {
         assert users.getLoc("User2") == 1;
         Index usersNoName = new Index(stringArrayList);
         assert usersNoName.getName() == "";
+
+        ArrayList<Integer> nums = new ArrayList<>();
+        nums.add(10);
+        nums.add(200);
+        nums.add(3000);
+        Series<Integer> numbers = new Series<>(nums, users);
+        System.out.println(numbers);
+        var present = numbers.get("User2");
+        System.out.println(present);
+        var notPresent = numbers.get("User20");
+        System.out.println(notPresent);
+        System.out.println(numbers.apply(Main::inc));
+    }
+
+    public static int inc(int a){
+        return a+1;
     }
 }
