@@ -26,7 +26,7 @@ public class Main {
         var present = numbers.get("User2");
         System.out.println(present);
         var notPresent = numbers.get("User20");
-        System.out.println(notPresent);
+        System.out.println(notPresent + System.lineSeparator());
         System.out.println(numbers.apply(Main::inc));
 
         for (var i: numbers.items()) {
@@ -35,6 +35,6 @@ public class Main {
     }
 
     public static int inc(int a){
-        return a+1;
+        return a+10;
     }
 }
