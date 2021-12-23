@@ -28,6 +28,10 @@ public class Main {
         var notPresent = numbers.get("User20");
         System.out.println(notPresent);
         System.out.println(numbers.apply(Main::inc));
+
+        for (var i: numbers.items()) {
+            System.out.println(i);
+        }
     }
 
     public static int inc(int a){

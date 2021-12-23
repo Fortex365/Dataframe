@@ -1,8 +1,13 @@
 package com.company;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 
 /*
 * Class reprezentation of series object.
@@ -69,6 +74,7 @@ public class Series<T> {
         return index;
     }
 
+    /*Retrieves the length of serie*/
     public int len(){
         return this.values.size();
     }
@@ -102,6 +108,7 @@ public class Series<T> {
         return new Series<>(newValues, index);
     }
 
+    /*Helper method for finding the key in index*/
     private T getItem(String key) throws KeyError {
         try {
             return values.get(index.getLoc(key));
@@ -110,6 +117,7 @@ public class Series<T> {
         }
     }
 
+    /*Retrieves the corresponding value of serie by key*/
     public T get(String key){
         try{
             return this.getItem(key);
@@ -118,6 +126,7 @@ public class Series<T> {
         }
     }
 
+    /*Applies a function to a serie, returns new one*/
     public Series<T> apply(Function<T, T> func) throws ValueError {
         ArrayList<T> newValues = new ArrayList<>();
 
@@ -125,5 +134,30 @@ public class Series<T> {
             newValues.add(func.apply(v));
         }
         return new Series<>(newValues, index);
+    }
+
+    /*Does a predicate on a serie and returns list of booleans*/
+    public ArrayList<Boolean> predicate(Function<T, Boolean> func){
+        ArrayList<Boolean> res = new ArrayList<>();
+
+        for (var v: values) {
+            res.add(func.apply(v));
+        }
+        return res;
+    }
+
+    /*Returns list of index:value string pairs*/
+    public ArrayList<String> items(){
+        var idx = index.getLabels();
+        ArrayList<String> res = new ArrayList<>();
+
+        for (int i = 0; i < idx.size(); i++) {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(idx.get(i));
+            stringBuilder.append(":");
+            stringBuilder.append(values.get(i));
+            res.add(stringBuilder.toString());
+        }
+        return res;
     }
 }
