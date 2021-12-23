@@ -1,12 +1,9 @@
 package com.company;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import org.javatuples.Pair;
 
 
 /*
@@ -160,4 +157,6 @@ public class Series<T> {
         }
         return res;
     }
+
+    public Pair<Integer,Integer>
 }
