@@ -3,7 +3,6 @@ package com.company;
 import java.util.ArrayList;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import org.javatuples.Pair;
 
 
 /*
@@ -158,5 +157,30 @@ public class Series<T> {
         return res;
     }
 
-    public Pair<Integer,Integer>
+    /*Since java doesnt have tuples to return <Integer, Integer>
+    * User of shape should it parse on its own from string,
+    * values separated by comma.
+    * */
+    public String shapeString(){
+        return "(" + values.size() + ", )";
+    }
+
+    /*Returned as fixed int[2] array
+    * where [0] is first dimension
+    * and [1] is 2nd dimension, that can
+    * be null if only 1st dimension.
+    * */
+    public int[] shape(){
+        int[] res = new int[2];
+        res[0] = values.size();
+        return res;
+    }
+
+    public void saveAsCsv(String fileName, String separator){
+
+    }
+
+    public void saveAsCsv(String fileName){
+        this.saveAsCsv(fileName, ",");
+    }
 }
