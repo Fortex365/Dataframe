@@ -157,12 +157,12 @@ public class Series<T> {
         return res;
     }
 
-    /*Since java doesnt have tuples to return <Integer, Integer>
+    /*Since java doesnt have tuples to return (Integer, Integer)
     * User of shape should it parse on its own from string,
     * values separated by comma.
     * */
     public String shapeString(){
-        return "(" + values.size() + ", )";
+        return "(" + values.size() + ", 0)";
     }
 
     /*Returned as fixed int[2] array
