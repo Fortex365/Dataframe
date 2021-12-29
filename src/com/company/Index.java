@@ -60,13 +60,28 @@ public class Index {
     * Returns:
     *   index: Number where the key was in index.
     * */
-    public int getLoc(String key) throws ValueError {
+    public int getLoc(String key) throws KeyError {
         int position =  this.labels.indexOf(key);
         if(position >= 0){
             return position;
         }
         else {
-            throw new ValueError(new Exception(), "Index doesnt exist, since " + key + " is not in labels.");
+            throw new KeyError(new Exception(), "Index doesnt exist, since " + key + " is not in labels.");
         }
+    }
+
+    public String toString(String separator) {
+        StringBuilder stringBuilder = new StringBuilder();
+        var labels = getLabels();
+        var sizeLabels = labels.size();
+        for (int i = 0; i < sizeLabels; i++) {
+            stringBuilder.append(labels.get(i));
+            if(i==sizeLabels-1){
+                break;
+            }
+            stringBuilder.append(separator);
+        }
+        stringBuilder.append(System.lineSeparator());
+        return stringBuilder.toString();
     }
 }

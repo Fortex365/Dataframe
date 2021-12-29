@@ -1,7 +1,9 @@
 package com.company;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.function.BiFunction;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.function.Function;
 
 
@@ -85,31 +87,12 @@ public class Series<T> {
         return stringBuilder.toString();
     }
 
-    /*
-    * WIP
-    * */
-    private Series<T> applyOperator(Series<T> other, BiFunction<T, T, T> operator) throws ValueError {
-        if(this.len() != other.len()){
-            throw new ValueError(new Exception(), "Length must be compatible.");
-        }
-
-        ArrayList<T> newValues = new ArrayList<>();
-        var otherValues = other.getValues();
-
-        for (int i = 0; i < values.size(); i++) {
-            var newValue = operator.apply(values.get(i), otherValues.get(i));
-            newValues.add(newValue);
-        }
-
-        return new Series<>(newValues, index);
-    }
-
     /*Helper method for finding the key in index*/
     private T getItem(String key) throws KeyError {
         try {
             return values.get(index.getLoc(key));
-        } catch (ValueError e) {
-            throw new KeyError(new Exception());
+        } catch (KeyError e) {
+            throw new KeyError(new Exception(), "Index doesnt exist, since " + key + " is not in labels.");
         }
     }
 
@@ -176,11 +159,56 @@ public class Series<T> {
         return res;
     }
 
-    public void saveAsCsv(String fileName, String separator){
+    /*
+    * Saves as comma separated value format. Just give the file a name
+    * and it will convert the object description into file.
+    * */
+    public void saveAsCsv(String fileName, String separator) throws IOException {
+        FileOutputStream fos = new FileOutputStream(fileName + ".txt");
+        BufferedOutputStream bos = new BufferedOutputStream(fos);
+        DataOutputStream file = new DataOutputStream(bos);
 
+        var serieString = this.toString(separator);
+        // writeBytes instead of writeUTF to avoid two spaces at start of file
+        // doubt you could use utf symbols now
+        file.writeBytes(serieString);
+        file.flush();
+        file.close();
     }
 
-    public void saveAsCsv(String fileName){
+    /*
+    * Overload method so you could optionally
+    * pass the separator in
+    * */
+    public void saveAsCsv(String fileName) throws IOException {
         this.saveAsCsv(fileName, ",");
     }
+
+
+    public String toString(String separator){
+        var labels = index.toString(separator);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        var valSize = values.size();
+
+        for (int i = 0; i < valSize; i++) {
+            stringBuilder.append(values.get(i).toString());
+            if(i==valSize-1){
+                break;
+            }
+            stringBuilder.append(separator);
+        }
+        stringBuilder.append(System.lineSeparator());
+
+        return labels + stringBuilder.toString();
+    }
+
+    public static <T extends Comparable<? super T>> T maxValue(Collection<T> c) {
+        return Collections.max(c);
+    }
+
+    public static <T extends Comparable<? super T>> T minValue(Collection<T> c) {
+        return Collections.min(c);
+    }
+
 }
