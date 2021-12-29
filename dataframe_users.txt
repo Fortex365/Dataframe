@@ -1,0 +1,4 @@
+salary,phoneNumbers,addresses
+10,200,3000
+604574148,745894274,798854621
+Riegrova,Olomoucká,Kovárenská

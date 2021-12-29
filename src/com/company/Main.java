@@ -67,6 +67,8 @@ public class Main {
         // retrieve from dataframe
         var g = dataframe.get("phoneNumbers");
         System.out.println(System.lineSeparator()+"Dataframe:"+System.lineSeparator()+g);
+        // save dataframe as csv
+        dataframe.saveAsCsv("dataframe_users");
     }
 
     public static int inc(int a){

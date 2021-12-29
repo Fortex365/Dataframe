@@ -203,12 +203,34 @@ public class Series<T> {
         return labels + stringBuilder.toString();
     }
 
+    /*
+    * Finds the maximal value of the serie, the T has to be comparable if its usermade.
+    * */
     public static <T extends Comparable<? super T>> T maxValue(Collection<T> c) {
         return Collections.max(c);
     }
 
+    /*
+    * Finds the minimal value of the serie.
+    * */
     public static <T extends Comparable<? super T>> T minValue(Collection<T> c) {
         return Collections.min(c);
+    }
+
+    /*Returns string of serie instance without the index labels.*/
+    public String valuesString(String separator){
+        StringBuilder stringBuilder = new StringBuilder();
+        var valSize = values.size();
+
+        for (int i = 0; i < valSize; i++) {
+            stringBuilder.append(values.get(i).toString());
+            if(i==valSize-1){
+                break;
+            }
+            stringBuilder.append(separator);
+        }
+        stringBuilder.append(System.lineSeparator());
+        return stringBuilder.toString();
     }
 
 }
