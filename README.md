@@ -18,10 +18,10 @@ Třída obsahuje následující vlastnosti:
 * `Series.index` - index sloužící k indexaci `Series.values`, musí být stejné délky jako `Series.values` jinak vyvolá `ValueError`. Pokud byla počáteční hodnota `null` vytvoříme index nový, `Index.labels` nastavíme na hodnoty `0` až `n` kde `n` je délka `Series.values`.
 
 Třída obsahuje následující metody:
-* `Series.get(self, key)` - pokud `Series.index` obsahuje `key`, vrátí odpovídající hodnotu z `Series.values`, jinak vrací `None`.
+* `Series.get(self, key)` - pokud `Series.index` obsahuje `key`, vrátí odpovídající hodnotu z `Series.values`, jinak vrací `null`.
 * `Series.max(self)` - nalezne maximální hodnotu z posloupnosti, detailní popis níže
 * `Series.min(self)` - nalezne minimální hodnotu z posloupnosti, analogicky k max variantě
-* `Series.apply(self, func)` - aplikuje libovolnou funkci na prvky posloupnosti, detailní popis níže
+* `Series.apply(Function func)` - aplikuje libovolnou funkci na prvky posloupnosti, detailní popis níže
 
 Dále bude možné provádět jednoduché operace na datech uložených v `Series`. Konkrétně:
 
