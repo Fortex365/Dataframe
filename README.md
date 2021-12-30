@@ -6,7 +6,7 @@ Třída obsahuje následující vlastnosti:
 * `Index.name` - volitelná vlastnost obsahující název indexu, výchozí hodnota na `""`.
 
 Třída obsahuje následující metody:
-* `Index.get_loc(self, key)` - přeloží klíč `key` z `Index.labels` na odpovídající index. Pokud není klíč přítomen vyvoláme výjimku `KeyError`.
+* `Index.getLoc(String key)` - přeloží klíč `key` z `Index.labels` na odpovídající index. Pokud není klíč přítomen vyvoláme výjimku `KeyError`.
 
 ## Třída `Series`
 Modul `Series.java` obsahuje třídu `Series`, která uchovává posloupnost hodnot indexovaných dle objektu třídy `Index`.
