@@ -1,3 +1,5 @@
+# Very raw description:
+
 ## Třída `Index`
 Modul `Index.java` obsahuje třídu `Index` sloužící k indexaci libovolné sekvence hodnot.
 
