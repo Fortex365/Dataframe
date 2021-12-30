@@ -1,7 +1,7 @@
 # Very raw description:
 
 ## Třída `Index`
-Modul `Index.java` obsahuje třídu `Index` sloužící k indexaci libovolné sekvence hodnot.
+Soubor `Index.java` obsahuje třídu `Index` sloužící k indexaci libovolné sekvence hodnot.
 
 Třída obsahuje následující vlastnosti:
 * `Index.labels` - seznam klíču (labelů) - nesmí obsahovat duplicity (vyvolá vyjimku `ValueError`) - musí mít alespoň jeden prvek (jinak vyvolá vyjimku `ValueError`).
@@ -15,7 +15,7 @@ Třída obsahuje následující metody:
 * `Index.toString(String separator)` - vrací ve stringu `Index.labels` oddělené separátorem `separator`
 
 ## Třída `Series`
-Modul `Series.java` obsahuje třídu `Series`, která uchovává posloupnost hodnot indexovaných dle objektu třídy `Index`.
+Soubor `Series.java` obsahuje třídu `Series`, která uchovává posloupnost hodnot indexovaných dle objektu třídy `Index`.
 
 ![Series](series.png)
 
@@ -65,7 +65,7 @@ assert result.getValues() == new ArrayList<Integer>(Arrays.asList(10000, 1000000
 ```
 
 ## Třída `Dataframe`
-Modul `Dataframe.java` obsahuje třídu `Dataframe`, která slouží k reprezentaci tabulky dat. Tabulka je složena ze sloupců (alespoň jeden sloupec, každý sloupec je tvořen instancí třídy `Series`). Sloupce jsou indexovány pomoci instance třídy `Index`.
+Soubor `Dataframe.java` obsahuje třídu `Dataframe`, která slouží k reprezentaci tabulky dat. Tabulka je složena ze sloupců (alespoň jeden sloupec, každý sloupec je tvořen instancí třídy `Series`). Sloupce jsou indexovány pomoci instance třídy `Index`.
 
 ![DataFrame](dataframe.png)
 
