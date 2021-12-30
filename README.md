@@ -39,8 +39,8 @@ assert cash_flow.min() == -2000;
 Která aplikuje funkci `func` na všechny prvky `Series` a vrátí `Series` novou (s vypočítanými hodnotami). Původní `Series` nemodifikuje!
 
 ```java
-public static int squared(a){
-    return a ** 2
+public static int squared(int a){
+    return a * a;
 }
 var users = new Index(new ArrayList<String>(Arrays.asList("user 1", "user 2", "user 3", "user 4")), name="names");
 var cash_flow = new Series<Integer>(Arrays.asList(-100, 10000, -2000, 1100), index=users);
