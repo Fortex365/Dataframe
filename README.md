@@ -44,7 +44,7 @@ public static int squared(int a){
 }
 var users = new Index(new ArrayList<String>(Arrays.asList("user 1", "user 2", "user 3", "user 4")), name="names");
 var cash_flow = new Series<Integer>(Arrays.asList(-100, 10000, -2000, 1100), index=users);
-var result = cash_flow.apply(squared);
+var result = cash_flow.apply(Main::squared);
 assert cash_flow.equals(result) == false;
 assert result.getValues() == new ArrayList<Integer>(Arrays.asList(10000, 100000000, 4000000, 1210000));
 ```
