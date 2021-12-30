@@ -19,8 +19,8 @@ Třída obsahuje následující vlastnosti:
 
 Třída obsahuje následující metody:
 * `Series.get(String key)` - pokud `Series.index` obsahuje `key`, vrátí odpovídající hodnotu z `Series.values`, jinak vrací `null`.
-* `Series.max()` - nalezne maximální hodnotu z posloupnosti, detailní popis níže
-* `Series.min()` - nalezne minimální hodnotu z posloupnosti, analogicky k max variantě
+* `Series.maxValue()` - nalezne maximální hodnotu z posloupnosti, detailní popis níže
+* `Series.minValue()` - nalezne minimální hodnotu z posloupnosti, analogicky k max variantě
 * `Series.apply(Function func)` - aplikuje libovolnou funkci na prvky posloupnosti, detailní popis níže
 
 Dále bude možné provádět jednoduché operace na datech uložených v `Series`. Konkrétně:
