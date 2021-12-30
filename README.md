@@ -86,7 +86,7 @@ var names = new Serie<String>(new ArrayList<String>(Arrays.asList("Lukas Novak",
 var cash_flow = new Serie<Integer>(new ArrayList<Integer>(Arrays.asList(-100, 10000, -2000, 1100)), index=users);
 
 var series = new ArrayList<Serie>(Arrays.asList(names, salaries, cash_flow));
-var index = new Index(new ArrayList<String>(Arrays.asList("names, "salary", "cash flow"));
+var index = new Index(new ArrayList<String>(Arrays.asList("names, "salary", "cash flow")));
 
 var data = new DataFrame(series, columns=index);
 assert data.get("salary") == salaries;
