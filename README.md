@@ -70,7 +70,7 @@ Modul `Dataframe.java` obsahuje třídu `Dataframe`, která slouží k reprezent
 ![DataFrame](dataframe.png)
 
 Třída obsahuje následující vlastnosti:
-* `Dataframe.getValues` - seznam instancí třídy `Series`, reprezentuje hodnoty sloupců, musí obsahovat alespoň jeden prvek jinak vyvolá `ValueError`.
+* `Dataframe.values` - seznam instancí třídy `Series`, reprezentuje hodnoty sloupců, musí obsahovat alespoň jeden prvek jinak vyvolá `ValueError`.
 * `Dataframe.columns` - index sloužící k indexaci `DataFrame.values`, musí být stejné délky jako `DataFrame.values` jinak vyvolá `ValueError`. Pokud byla počáteční hodnota `None` vytvoříme index nový, `Index.labels` nastavíme na hodnoty `0` až `n` kde `n` je délka `DataFrame.values`.
 
 Třída obsahuje následující metody:
