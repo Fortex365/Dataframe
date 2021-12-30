@@ -9,6 +9,10 @@ Třída obsahuje následující vlastnosti:
 
 Třída obsahuje následující metody:
 * `Index.getLoc(String key)` - přeloží klíč `key` z `Index.labels` na odpovídající index. Pokud není klíč přítomen vyvoláme výjimku `KeyError`.
+* `Index.getName()` - vrací jméno Indexu
+* `Index.getLabels()` - vrací labels Indexu
+* `Index.len()` - vrací délku Indexu
+* `Index.toString(String separator)` - vrací ve stringu `Index.labels` oddělené separátorem `separator`
 
 ## Třída `Series`
 Modul `Series.java` obsahuje třídu `Series`, která uchovává posloupnost hodnot indexovaných dle objektu třídy `Index`.
@@ -24,6 +28,15 @@ Třída obsahuje následující metody:
 * `Series.maxValue()` - nalezne maximální hodnotu z posloupnosti, detailní popis níže
 * `Series.minValue()` - nalezne minimální hodnotu z posloupnosti, analogicky k max variantě
 * `Series.apply(Function func)` - aplikuje libovolnou funkci na prvky posloupnosti, detailní popis níže
+* `Series.getValues()` - vrací `Series.values`
+* `Series.getIndex()` - vrací `Series.index` objekt
+* `Series.len()` - vrací délku posloupnosti
+* `Series.predicate(Function<T, Boolean> func)` - aplikuje predikátovou funkci na posloupnost a vrátí seznam pravdivostních hodnot 
+* `Series.items()` - vrací iterátor (seznam) párů key:value castovaných do stringu
+* `Series.shapeString()` - vrací "string tuple" rozměrů posloupnosti oddělených čárkou
+* `Series.shape()` - vrací rozměry posloupnosti jako dvouprvkový int[]
+* `Series.saveAsCsv(String filename)` - uloží instanci posloupnosti do souboru s daným názvem, default separator je `,`
+* `Series.saveAsCsv(String filename, String separator)` - uloží instanci posloupnosti do souboru s daným názvem, volitelný separator
 
 Dále bude možné provádět jednoduché operace na datech uložených v `Series`. Konkrétně:
 
