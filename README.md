@@ -75,7 +75,7 @@ Třída obsahuje následující vlastnosti:
 
 Třída obsahuje následující metody:
 * `Dataframe.get(String key)` - pokud `Dataframe.columns` obsahuje `key`, vrátí odpovídající sloupec (`Series`) z `Dataframe.values`, jinak vrací `null`.
-* `Dataframe.saveAsCsv(String filename)` - uloží instanci tabulky do souboru s daným názvem, default separator je ,
+* `Dataframe.saveAsCsv(String filename)` - uloží instanci tabulky do souboru s daným názvem, default separator je `,`
 * `Dataframe.saveAsCsv(String filename, String separator)` - uloží instanci tabulky do souboru s daným názvem, volitelný separator
 
 ```java
