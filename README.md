@@ -72,6 +72,6 @@ var series = new ArrayList<Serie>(Arrays.asList(names, salaries, cash_flow));
 var index = new Index(new ArrayList<String>(Arrays.asList("names, "salary", "cash flow"));
 
 var data = new DataFrame(series, columns=index);
-assert data.get("salary") == salaries
-assert data.get("cash flow").max() == 10000
+assert data.get("salary") == salaries;
+assert data.get("cash flow").max() == 10000;
 ```
