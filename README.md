@@ -82,10 +82,10 @@ Třída obsahuje následující metody:
 var users = new Index(new ArrayList<String>(Arrays.asList("user 1", "user 2", "user 3", "user 4")), name="names");
 
 var salaries = new Series<Integer>(Arrays.asList(20000, 10000, 300000, 20000, 50000), index=users);
-var names = new Serie<String>(new ArrayList<String>(Arrays.asList("Lukas Novak", "Petr Pavel", "Pavel Petr", "Ludek Skocil")), index=users);
-var cash_flow = new Serie<Integer>(new ArrayList<Integer>(Arrays.asList(-100, 10000, -2000, 1100)), index=users);
+var names = new Series<String>(new ArrayList<String>(Arrays.asList("Lukas Novak", "Petr Pavel", "Pavel Petr", "Ludek Skocil")), index=users);
+var cash_flow = new Series<Integer>(new ArrayList<Integer>(Arrays.asList(-100, 10000, -2000, 1100)), index=users);
 
-var series = new ArrayList<Serie>(Arrays.asList(names, salaries, cash_flow));
+var series = new ArrayList<Series>(Arrays.asList(names, salaries, cash_flow));
 var index = new Index(new ArrayList<String>(Arrays.asList("names", "salary", "cash flow")));
 
 var data = new DataFrame(series, columns=index);
